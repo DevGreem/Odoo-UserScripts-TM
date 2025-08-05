@@ -10,7 +10,7 @@
 // @include      *://*.odoo/contacts/*
 // @icon         https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
 // @grant        none
-// @require      https://github.com/DevGreem/Odoo-UserScripts-TM/utils.js
+// @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/main/utils.js
 // ==/UserScript==
 
 (function() {
