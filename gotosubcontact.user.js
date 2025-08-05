@@ -6,7 +6,7 @@
 // @author       GreemDev
 // @match        *://*/odoo/res.partner/*
 // @include      *://*.odoo/res.partner/*
-// @include      *://*.odoo/contacts/*
+// @include      *://*/odoo/contacts/*
 // @include      *://*.odoo/contacts/*
 // @icon         https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
 // @grant        none
