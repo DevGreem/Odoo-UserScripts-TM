@@ -5,45 +5,15 @@
 // @description  try to take over the world!
 // @author       GreemDev
 // @match        *://*/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @iconURL      https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @require      https://github.com/DevGreem/Odoo-UserScripts-TM/utils.js
 // ==/UserScript==
 
 
 (function() {
     'use strict';
-
-    /**
-     * Open a link
-     * @param {string} url
-     * @param {boolean} inNewTab
-     */
-    function sendTo(url, inNewTab = false) {
-        if (inNewTab) {
-            window.open(url, '_blank');
-            return;
-        }
-        window.location.href = url;
-    }
-
-    /**
-     * 
-     * @param {KeyboardEvent} key
-     * @param {string} awaitedKey
-     */
-    function twoKeys(key, awaitedKey) {
-        return key.ctrlKey && key.altKey && key.key.toLowerCase() === awaitedKey;
-    }
-
-    /**
-     * 
-     * @param {KeyboardEvent} key 
-     * @param {string} awaitedKey
-     */
-    function threeKeys(key, awaitedKey) {
-        return key.shiftKey && twoKeys(key, awaitedKey)
-    }
 
     /**
      * 
@@ -114,8 +84,7 @@
         return;
     }
 
-    const awaitModules = () => {
-
+    document.addEventListener('DOMContentLoaded', (e) => {
         const modules = Array.from(document.body.querySelectorAll('a'));
 
         const modulesData = modules.map(module => {
@@ -133,7 +102,5 @@
         })
 
         GM_setValue('odoo_modules', modulesData);
-    };
-
-    setTimeout(awaitModules, 1000);
+    })
 })();

@@ -6,45 +6,15 @@
 // @author       GreemDev
 // @match        *://*/odoo/res.partner/*
 // @include      *://*.odoo/res.partner/*
+// @include      *://*.odoo/contacts/*
+// @include      *://*.odoo/contacts/*
 // @icon         https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
 // @grant        none
+// @require      https://github.com/DevGreem/Odoo-UserScripts-TM/utils.js
 // ==/UserScript==
 
 (function() {
     'use strict';
-
-    /**
-     * Open a link
-     * @param {string} url
-     * @param {boolean} inNewTab
-     */
-    function sendTo(url, inNewTab = false) {
-        if (inNewTab) {
-            window.open(url, '_blank');
-            return;
-        }
-        window.location.href = url;
-    }
-
-    window.sendTo = sendTo
-
-    /**
-     * 
-     * @param {KeyboardEvent} key
-     * @param {string} awaitedKey
-     */
-    function twoKeys(key, awaitedKey) {
-        return key.ctrlKey && key.altKey && key.key.toLowerCase() === awaitedKey;
-    }
-
-    /**
-     * 
-     * @param {KeyboardEvent} key 
-     * @param {string} awaitedKey
-     */
-    function threeKeys(key, awaitedKey) {
-        return key.shiftKey && twoKeys(key, awaitedKey)
-    }
 
     /**
      * @type {{name: string, url: string}[]}
@@ -99,10 +69,10 @@
 
         //console.log(subcontacts)
         //console.log(subcontactsPannel)
-    }
+    };
 
-    setTimeout(loadSubcontacts, 2000)
-
+    setInterval(loadSubcontacts, 2000);
+    
     function goToContact(inNewTab = false) {
         if (subcontactsPannel.length == 0 || !subcontactsPannel) {
             alert('No subcontacts');
@@ -123,16 +93,6 @@
         sendTo(subcontactsPannel[selectedSubContact].url, inNewTab)
     }
 
-    document.addEventListener('keydown', (e) => {
-
-        if (threeKeys(e, 'g')) {
-            goToContact(true);
-            return;
-        }
-
-        if (twoKeys(e, 'g')) {
-            goToContact();
-            return;
-        }
-    })
+    addShortcut(twoKeys, 'g', (e) => goToContact(true));
+    addShortcut(threeKeys, 'g', (e) => goToContact());
 })();
