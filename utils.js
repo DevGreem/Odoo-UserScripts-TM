@@ -1,13 +1,12 @@
 // ==UserScript==
-// @name         Odoo Module List
+// @name         Odoo Userscripts Utilities
 // @namespace    http://tampermonkey.net/
-// @version      2025-08-05
+// @version      2025-08-6
 // @description  Odoo UserScripts Utils!
 // @author       GreemDev
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        GM_setValue
-// @grant        GM_getValue
+// @grant        none
 // ==/UserScript==
 
 (function() {
