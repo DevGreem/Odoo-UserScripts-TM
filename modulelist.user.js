@@ -1,16 +1,15 @@
 // ==UserScript==
 // @name         Odoo Module List
 // @namespace    http://tampermonkey.net/
-// @version      2025-08-07
+// @version      2025-08-07b
 // @description  Open a Odoo module on any page!
 // @author       GreemDev
 // @match        *://*/*
 // @iconURL      https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
 // @grant        GM_getValue
-// @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/main/utils.js
+// @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/beta/utils.js
 // @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/beta/loadModules.js
 // ==/UserScript==
-
 
 (function() {
     'use strict';

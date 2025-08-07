@@ -1,36 +1,27 @@
-// ==UserScript==
-// @name         Odoo Module List
-// @namespace    http://tampermonkey.net/
-// @version      2025-08-07
-// @description  Open a Odoo module on any page!
-// @author       GreemDev
-// @match        *://*/odoo
-// @match        *://*.odoo
-// @iconURL      https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
-// @grant        GM_setValue
-// @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/main/utils.js
-// ==/UserScript==
 
-(function() {
-    console.log("Saving modules...")
+const pattern = /https:\/\/[^/]+\/odoo\/?$/;
 
-    document.addEventListener('DOMContentLoaded', (e) => {
-        const modules = Array.from(document.body.querySelectorAll('a'));
+if (!pattern.test(window.location.href)) {
+    return;
+}
 
-        const modulesData = modules.map(module => {
+console.log("Saving modules...")
 
+document.addEventListener('DOMContentLoaded', (e) => {
+    const modules = Array.from(document.body.querySelectorAll('a'));
 
-            const url = module.href;
+    const modulesData = modules.map(module => {
 
-            let name = module.lastChild.textContent;
+        const url = module.href;
 
-            if (name === '') {
-                name = 'Home'
-            }
+        let name = module.lastChild.textContent;
 
-            return { name, url };
-        })
+        if (name === '') {
+            name = 'Home'
+        }
 
-        GM_setValue('odoo_modules', modulesData);
+        return { name, url };
     })
-})()
+
+    GM_setValue('odoo_modules', modulesData);
+})
