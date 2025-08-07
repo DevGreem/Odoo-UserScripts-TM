@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Odoo Userscripts Utilities
 // @namespace    http://tampermonkey.net/
-// @version      2025-08-6
+// @version      2025-08-7
 // @description  Odoo UserScripts Utils!
 // @author       GreemDev
 // @match        *://*/*

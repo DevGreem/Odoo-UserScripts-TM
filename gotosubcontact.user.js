@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Odoo Subcontacts List
 // @namespace    http://tampermonkey.net/
-// @version      2025-08-05
+// @version      2025-08-07
 // @description  Instant open subcontacts of a contact!
 // @author       GreemDev
 // @match        *://*/odoo/res.partner/*
