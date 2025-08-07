@@ -66,16 +66,6 @@
         return;
     }
 
-    document.addEventListener('keydown', async function(e) {
-
-        if (threeKeys(e, 's')) {
-            openOdooModule(true);
-            return;
-        }
-
-        if (twoKeys(e, 's')) {
-            openOdooModule();
-            return;
-        }
-    })
+    addShortcut(threeKeys, 's', (e) => openOdooModule());
+    addShortcut(twoKeys, 's', (e) => openOdooModule(true));
 })();

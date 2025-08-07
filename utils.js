@@ -28,21 +28,20 @@ function twoKeys(key, awaitedKey) {
  * @param {string} awaitedKey
  */
 function threeKeys(key, awaitedKey) {
-    return key.shiftKey && twoKeys(key, awaitedKey)
+    return key.shiftKey && twoKeys(key, awaitedKey);
 }
 
 /**
- * @param {Document} toUpdateDocument
  * @param {twoKeys|threeKeys} shortcutFunction
  * @param {string} awaitedKey 
  * @param {(e: KeyboardEvent) => void} toExecute 
  */
-function addShortcut(toUpdateDocument, shortcutFunction, awaitedKey, toExecute) {
+function addShortcut(shortcutFunction, awaitedKey, toExecute) {
     
-    toUpdateDocument.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', (e) => {
         
         if (shortcutFunction(e, awaitedKey)) {
-            toExecute(e)
+            toExecute(e);
         }
-    })
+    });
 }

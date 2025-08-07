@@ -21,7 +21,7 @@
     /**
      * @type {{name: string, url: string}[]}
      */
-    const subcontactsPannel = []
+    const subcontactsPannel = [];
 
     function loadSubcontacts() {
         const subcontacts = Array.from(document.getElementsByTagName('article'));
@@ -92,9 +92,9 @@
 
         const selectedSubContact = parseInt(selection)-1;
 
-        sendTo(subcontactsPannel[selectedSubContact].url, inNewTab)
+        sendTo(subcontactsPannel[selectedSubContact].url, inNewTab);
     }
 
-    addShortcut(document, twoKeys, 'g', (e) => goToContact(true));
-    addShortcut(document, threeKeys, 'g', (e) => goToContact());
+    addShortcut(twoKeys, 'g', (e) => goToContact(true));
+    addShortcut(threeKeys, 'g', (e) => goToContact());
 })();
