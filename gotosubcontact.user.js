@@ -2,7 +2,7 @@
 // @name         Odoo Subcontacts List
 // @namespace    http://tampermonkey.net/
 // @version      2025-08-05
-// @description  try to take over the world!
+// @description  Instant open subcontacts of a contact!
 // @author       GreemDev
 // @match        *://*/odoo/res.partner/*
 // @include      *://*.odoo/res.partner/*
@@ -15,6 +15,8 @@
 
 (function() {
     'use strict';
+
+    console.log("Executing Subcontacts List");
 
     /**
      * @type {{name: string, url: string}[]}
@@ -93,6 +95,6 @@
         sendTo(subcontactsPannel[selectedSubContact].url, inNewTab)
     }
 
-    addShortcut(twoKeys, 'g', (e) => goToContact(true));
-    addShortcut(threeKeys, 'g', (e) => goToContact());
+    addShortcut(document, twoKeys, 'g', (e) => goToContact(true));
+    addShortcut(document, threeKeys, 'g', (e) => goToContact());
 })();

@@ -12,6 +12,8 @@
 (function() {
     "use strict";
 
+    console.log("Executing Utils");
+
     /**
      * Open a link
      * @param {string} url
@@ -44,13 +46,14 @@
     }
 
     /**
+     * @param {Document} toUpdateDocument
      * @param {twoKeys|threeKeys} shortcutFunction
      * @param {string} awaitedKey 
      * @param {(e: KeyboardEvent) => void} toExecute 
      */
-    function addShortcut(shortcutFunction, awaitedKey, toExecute) {
+    function addShortcut(toUpdateDocument, shortcutFunction, awaitedKey, toExecute) {
         
-        document.addEventListener('keydown', (e) => {
+        toUpdateDocument.addEventListener('keydown', (e) => {
             
             if (shortcutFunction(e, awaitedKey)) {
                 toExecute(e)
