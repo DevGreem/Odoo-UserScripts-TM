@@ -6,9 +6,9 @@
 // @author       GreemDev
 // @match        *://*/*
 // @iconURL      https://play-lh.googleusercontent.com/Zv2I5VIii0ZK9sJ2FgPFZxynVqtcenDZkO9BUYMO-35sTExs21OsGXEj2kQQFkk2ww
-// @grant        GM_setValue
 // @grant        GM_getValue
 // @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/main/utils.js
+// @require      https://raw.githubusercontent.com/DevGreem/Odoo-UserScripts-TM/beta/loadModules.js
 // ==/UserScript==
 
 
@@ -78,31 +78,5 @@
             openOdooModule();
             return;
         }
-    })
-
-    const pattern = /https:\/\/[^/]+\/odoo\/?$/;
-
-    if (!pattern.test(window.location.href)) {
-        return;
-    }
-
-    document.addEventListener('DOMContentLoaded', (e) => {
-        const modules = Array.from(document.body.querySelectorAll('a'));
-
-        const modulesData = modules.map(module => {
-
-
-            const url = module.href;
-
-            let name = module.lastChild.textContent;
-
-            if (name === '') {
-                name = 'Home'
-            }
-
-            return { name, url };
-        })
-
-        GM_setValue('odoo_modules', modulesData);
     })
 })();
