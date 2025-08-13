@@ -1,6 +1,8 @@
 
 const pattern = /https:\/\/[^/]+\/odoo\/?$/;
 
+//? Cambiar el evento pon un timeout
+
 if (pattern.test(window.location.href)) {
     
     console.log("Saving modules...");
