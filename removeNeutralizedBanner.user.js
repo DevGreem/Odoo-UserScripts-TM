@@ -14,5 +14,5 @@
 
     const neutralizeBanner = document.getElementById('oe_neutralize_banner');
 
-    !neutralizeBanner && neutralizeBanner.remove();
+    neutralizeBanner && neutralizeBanner.remove();
 })();

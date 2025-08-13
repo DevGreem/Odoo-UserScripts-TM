@@ -14,5 +14,5 @@
 
     const neutralizeRibbon = document.getElementById('oe_neutralize_ribbon');
 
-    !neutralizeRibbon && neutralizeRibbon.remove();
+    neutralizeRibbon && neutralizeRibbon.remove();
 })();
