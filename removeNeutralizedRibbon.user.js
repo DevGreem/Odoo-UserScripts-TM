@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Neutralize Banner Remover
+// @name         Neutralize Ribbon Remover
 // @namespace    http://tampermonkey.net/
 // @version      2025-08-13
 // @description  Removes the neutralize banner!
@@ -12,7 +12,7 @@
 
 (function() {
 
-    const neutralizeBanner = document.getElementById('oe_neutralize_banner');
+    const neutralizeRibbon = document.getElementById('oe_neutralize_ribbon');
 
-    !neutralizeBanner && neutralizeBanner.remove();
+    !neutralizeRibbon && neutralizeRibbon.remove();
 })();
